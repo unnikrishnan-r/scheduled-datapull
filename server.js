@@ -1,7 +1,7 @@
 var express = require("express");
 var db = require("./models");
 
-// const routes = require("./routes");
+const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +14,7 @@ app.use(express.json());
 // }
 
 // Routes
-// app.use(routes);
+app.use(routes);
 
 var syncOptions = {};
 syncOptions.force = process.env.SYNC_MODEL === "true" ? true : false;
