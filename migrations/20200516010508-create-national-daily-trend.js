@@ -12,13 +12,19 @@ module.exports = {
         type: Sequelize.DATEONLY
       },
       confirmed: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       active: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       recovered: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+      },
+      deceased: {
+        type: Sequelize.INTEGER,
+      },
+      tested: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,

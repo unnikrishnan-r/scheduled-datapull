@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
       confirmed: DataTypes.INTEGER,
       active: DataTypes.INTEGER,
       recovered: DataTypes.INTEGER,
+      deceased: DataTypes.INTEGER,
+      tested: DataTypes.INTEGER
     },
     {}
   );

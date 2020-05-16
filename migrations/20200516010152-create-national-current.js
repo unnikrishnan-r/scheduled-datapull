@@ -1,33 +1,39 @@
-'use strict';
+"use strict";
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('National_Currents', {
+    return queryInterface.createTable("National_Currents", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       confirmed: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       active: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
       },
       recovered: {
-        type: Sequelize.INTEGER
+        type: Sequelize.INTEGER,
+      },
+      deceased: {
+        type: Sequelize.INTEGER,
+      },
+      tested: {
+        type: Sequelize.INTEGER,
       },
       createdAt: {
         allowNull: false,
-        type: Sequelize.DATE
+        type: Sequelize.DATE,
       },
       updatedAt: {
         allowNull: false,
-        type: Sequelize.DATE
-      }
+        type: Sequelize.DATE,
+      },
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('National_Currents');
-  }
+    return queryInterface.dropTable("National_Currents");
+  },
 };
