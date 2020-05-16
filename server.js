@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 var express = require("express");
 var db = require("./models");
 
@@ -18,6 +20,7 @@ app.use(routes);
 
 var syncOptions = {};
 syncOptions.force = process.env.SYNC_MODEL === "true" ? true : false;
+console.log(process.env.SYNC_MODEL)
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelizeConnection.sync(syncOptions).then(function () {
