@@ -1,4 +1,6 @@
 require("dotenv").config();
+var CronJob = require('cron').CronJob;
+const dataPullUSAController = require("./controllers/dataPullUSAController");
 
 var express = require("express");
 var db = require("./models");
@@ -17,10 +19,14 @@ app.use(express.json());
 
 // Routes
 app.use(routes);
+// const job = new CronJob('* * * * * *', function() {
+const job = new CronJob('0 */01 * * * *', function() {
+  console.log('Every Minute:', new Date());
+  dataPullUSAController.pullData();
+});
 
 var syncOptions = {};
 syncOptions.force = process.env.SYNC_MODEL === "true" ? true : false;
-console.log(process.env.SYNC_MODEL)
 
 // Starting the server, syncing our models ------------------------------------/
 db.sequelizeConnection.sync(syncOptions).then(function () {
@@ -30,6 +36,7 @@ db.sequelizeConnection.sync(syncOptions).then(function () {
       PORT,
       PORT
     );
+    job.start();
   });
 });
 
