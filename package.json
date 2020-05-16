@@ -1,0 +1,29 @@
+{
+  "name": "scheduled-datapull",
+  "version": "1.0.0",
+  "description": "Application that grabs data from an open API at scheduled intervals and inserts to a DB",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unnikrishnan-r/scheduled-datapull.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/unnikrishnan-r/scheduled-datapull/issues"
+  },
+  "homepage": "https://github.com/unnikrishnan-r/scheduled-datapull#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "if-env": "^1.0.4",
+    "sequelize": "^5.21.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4",
+    "sequelize-cli": "^5.5.1"
+  }
+}
