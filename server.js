@@ -22,7 +22,7 @@ app.use(routes);
 // const job = new CronJob('* * * * * *', function() {
 const job = new CronJob('0 */01 * * * *', function() {
   console.log('Every Minute:', new Date());
-  dataPullUSAController.pullData();
+  dataPullUSAController.getCurrentSummary();
 });
 
 var syncOptions = {};
